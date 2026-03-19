@@ -1,65 +1,63 @@
 # Online Property Rental Real Estate Platform
 
 ## Project Overview
-This project is a web-based platform that facilitates property rental and leasing services. It connects landlords and tenants allowing ease of property management and lease agreements.
+This project is an online platform designed to facilitate property rentals in a streamlined manner. Users can easily browse listings, landlords can manage their properties, and potential tenants can find their ideal homes.
 
 ## Features
-- User Registration and Authentication
-- Property Listing and Searching
-- Booking System for Property Viewings
-- Admin Dashboard for Property Management
-- Notifications and Messaging System
-- Reviews and Ratings for Landlords and Properties
+- **User Authentication:** Secure login and registration for landlords and tenants.
+- **Property Listings:** Users can browse, filter, and search for properties based on various criteria.
+- **Booking System:** Tenants can book properties directly through the platform.
+- **Admin Dashboard:** An administrative interface for managing users and properties.
+- **Feedback System:** Both landlords and tenants can provide feedback on their experiences.
 
 ## Tech Stack
-- **Frontend:** React, HTML, CSS, JavaScript
-- **Backend:** Node.js, Express
+- **Frontend:** React.js, Bootstrap 4
+- **Backend:** Node.js, Express.js
 - **Database:** MongoDB
-- **Hosting:** Heroku / AWS
+- **Authentication:** JSON Web Token (JWT) for secure user authentication
 
-## Installation Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Sumannay/Online-Property-Rental-Real-Estate-Platform.git
-   cd Online-Property-Rental-Real-Estate-Platform
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Set up environment variables in a `.env` file as per `.env.example`.
-4. Start the server:
-   ```bash
-   npm start
-   ```
+## Installation Guide
+### Prerequisites
+- Node.js installed on your machine.
+- MongoDB running locally or a cloud MongoDB service.
+
+### Steps
+1. Clone the repository: `git clone https://github.com/Sumannay/Online-Property-Rental-Real-Estate-Platform.git`
+2. Navigate into the project directory: `cd Online-Property-Rental-Real-Estate-Platform`
+3. Install backend dependencies: `cd backend && npm install`
+4. Install frontend dependencies: `cd ../frontend && npm install`
+5. Run the backend server: `cd backend && npm start`
+6. Run the frontend application: `cd frontend && npm start`
+
+## Database Models
+- **User:** Stores user information including username, password, role (landlord/tenant).
+- **Property:** Contains details of properties including location, price, availability, and landlord ID.
+- **Booking:** Manages bookings with references to users and properties.
+- **Feedback:** Captures feedback from tenants about properties and landlords.
+
+## API Routes
+| Method | Endpoint              | Description                      |
+|--------|-----------------------|----------------------------------|
+| GET    | /api/properties       | Retrieve all properties          |
+| GET    | /api/properties/:id   | Retrieve specific property       |
+| POST   | /api/properties       | Create new property             |
+| PUT    | /api/properties/:id   | Update existing property         |
+| DELETE | /api/properties/:id   | Delete a property               |
+| POST   | /api/auth/login       | Authenticate user               |
 
 ## Usage Guide
-- Visit the website at `http://localhost:3000`
-- Create an account or log in.
-- Explore property listings, and use the booking system to schedule viewings.
-
-## Project Structure
-```
-├── client/          # Frontend code
-├── server/          # Backend code
-├── .env.example      # Example environment variables
-├── README.md        # Project documentation
-└── ...
-```
+1. Follow the installation guide to set up the project.
+2. Use the frontend interface to browse and book properties.
+3. Landlords can manage their listings through the admin dashboard.
+4. Provide feedback after booking to help other users.
 
 ## Contributing Guidelines
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m 'Add some feature'
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/YourFeature
-   ```
-5. Open a pull request.
+- Fork the project and clone it to your local machine.
+- Create a new branch for your feature: `git checkout -b feature/YourFeature`.
+- Make your changes and commit them: `git commit -m 'Add some feature'`.
+- Push to your branch: `git push origin feature/YourFeature`.
+- Open a pull request detailing your changes.
+
+## Acknowledgments
+- Inspired by online rental platforms.
+- Special thanks to contributors and users for their feedback and support.
