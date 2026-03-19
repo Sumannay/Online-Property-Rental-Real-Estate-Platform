@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-md-8">
+
+      <div class="card shadow-lg p-4">
+
+        <h3 class="text-center mb-4">🏠 Add New Property</h3>
+
+        <!-- FLASH MESSAGE -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+        <div class="alert alert-danger">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endwith %}
+
+        <form method="POST" enctype="multipart/form-data">
+
+          <!-- TITLE -->
+          <div class="mb-3">
+            <label class="form-label">Property Title</label>
+            <input type="text" name="title" class="form-control" placeholder="Enter title" required>
+          </div>
+
+          <!-- LOCATION -->
+          <div class="mb-3">
+            <label class="form-label">Location</label>
+            <input type="text" name="location" class="form-control" placeholder="Enter location" required>
+          </div>
+
+          <!-- PRICE -->
+          <div class="mb-3">
+            <label class="form-label">Price (₹)</label>
+            <input type="text" name="price" class="form-control" placeholder="Enter price (numbers only)" required>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="mb-3">
+            <label class="form-label">Contact Number</label>
+            <input type="text" name="contact_number" class="form-control" placeholder="Enter 10 digit number" required>
+          </div>
+
+          <!-- ✅ NEW PROPERTY TYPE -->
+          <div class="mb-3">
+            <label class="form-label">Property Type</label>
+            <select name="property_type" class="form-control" required>
+              <option value="">Select Type</option>
+              <option value="sell">🏷️ For Sale</option>
+              <option value="rent">🏠 For Rent</option>
+            </select>
+          </div>
+
+          <!-- DESCRIPTION -->
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea name="description" class="form-control" rows="4" placeholder="Enter property details"></textarea>
+          </div>
+
+          <!-- IMAGES -->
+          <div class="mb-3">
+            <label class="form-label">Main Image</label>
+            <input type="file" name="image" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Image 2</label>
+            <input type="file" name="image2" class="form-control">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Image 3</label>
+            <input type="file" name="image3" class="form-control">
+          </div>
+
+          <!-- BUTTON -->
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">
+              ➕ Add Property
+            </button>
+          </div>
+
+        </form>
+
+        <!-- BACK -->
+        <div class="text-center mt-3">
+          <a href="/dashboard">⬅ Back to Dashboard</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ✅ FRONTEND VALIDATION (INSTANT CHECK) -->
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+
+    let price = document.querySelector("[name='price']").value;
+    let contact = document.querySelector("[name='contact_number']").value;
+
+    if (!/^\d+$/.test(price)) {
+      alert("❌ Price must be numbers only");
+      e.preventDefault();
+      return;
+    }
+
+    if (!/^\d{10}$/.test(contact)) {
+      alert("❌ Contact must be exactly 10 digits");
+      e.preventDefault();
+      return;
+    }
+
+  });
+</script>
+
+{% endblock %}

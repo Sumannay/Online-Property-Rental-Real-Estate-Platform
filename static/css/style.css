@@ -1,0 +1,132 @@
+/* BODY */
+body {
+  background: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.custom-navbar {
+  background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* NAV BUTTONS */
+.nav-btn {
+  color: white;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn-home {
+  background: #0d6efd;
+}
+
+.btn-dashboard {
+  background: #198754;
+}
+
+.btn-fav {
+  background: #ffc107;
+  color: black;
+}
+
+.btn-book {
+  background: #17a2b8;
+}
+
+.btn-logout {
+  background: #dc3545;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* ADD BUTTON */
+.add-btn {
+  background: #6610f2;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+/* ✅ FIXED HOVER */
+.add-btn:hover {
+  background: #520dc2;
+  transform: scale(1.05);
+}
+
+/* PROPERTY CARD */
+.property-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.property-card:hover {
+  transform: translateY(-5px);
+}
+
+.property-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* PRICE */
+.price {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* ================= SLIDER ================= */
+
+.slider-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.slider-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* BUTTONS */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* LEFT / RIGHT */
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
